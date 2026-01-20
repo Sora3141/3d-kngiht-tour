@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KNIGHT TOUR // 3D ADAPTIVE DASHBOARD</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600&family=Orbitron:wght@500;900&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="ui-layer">
+        <div class="glass-panel" id="main-panel">
+            <header>
+                <div class="logo-glitch" data-text="KNIGHT TOUR">KNIGHT TOUR</div>
+                <div class="subtitle">ADAPTIVE SPATIAL GRID v3.8</div>
+            </header>
+            <div class="control-grid">
+                <div class="slider-group">
+                    <label>DIM <span class="dim-axis">N</span> <span id="valN" class="val">4</span></label>
+                    <input type="range" id="inN" value="4" min="1" max="8" step="1">
+                </div>
+                <div class="slider-group">
+                    <label>DIM <span class="dim-axis">M</span> <span id="valM" class="val">4</span></label>
+                    <input type="range" id="inM" value="4" min="1" max="8" step="1">
+                </div>
+                <div class="slider-group">
+                    <label>DIM <span class="dim-axis">L</span> <span id="valL" class="val">4</span></label>
+                    <input type="range" id="inL" value="4" min="1" max="8" step="1">
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="btnUndo" class="btn-glass">↺ UNDO</button>
+                <button id="btnApply" class="btn-glass primary">◆ REBOOT</button>
+            </div>
+            <div class="status-monitor">
+                <div id="pos-info" class="monitor-text">READY</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-wrapper">
+        <div id="canvas-container"></div>
+        <div id="map-container">
+            <div class="map-header">LAYER ANALYSIS</div>
+            <div id="layer-maps"></div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
